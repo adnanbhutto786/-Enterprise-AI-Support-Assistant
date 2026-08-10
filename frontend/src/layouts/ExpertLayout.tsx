@@ -172,20 +172,20 @@ export default function ExpertLayout() {
   )
 
   return (
-    <div className="flex h-full w-full overflow-hidden bg-background text-foreground font-sans relative">
+    <div className="flex flex-1 min-h-0 w-full bg-background text-foreground font-sans relative overflow-hidden">
       {/* Dynamic Background Gradients */}
       <div className="absolute top-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-600/10 blur-[120px] pointer-events-none animate-blob mix-blend-screen" />
       <div className="absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[120px] pointer-events-none animate-blob animation-delay-2000 mix-blend-screen" />
 
       {/* Desktop Sidebar */}
-      <div className="hidden w-64 glass-panel md:flex flex-col h-full shrink-0 relative z-10 border-t-0 border-b-0 border-l-0 border-r-white/10 rounded-none shadow-[4px_0_24px_rgba(0,0,0,0.5)] bg-white/80 dark:bg-slate-950/80">
+      <div className="hidden w-56 lg:w-64 glass-panel md:flex flex-col h-full shrink-0 relative z-10 border-t-0 border-b-0 border-l-0 border-r-white/10 rounded-none shadow-[4px_0_24px_rgba(0,0,0,0.5)] bg-white/80 dark:bg-slate-950/80">
         <SidebarContent />
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-1 flex-col h-full min-w-0 min-h-0 overflow-hidden relative z-10">
+      <div className="flex flex-1 flex-col min-w-0 min-h-0 overflow-hidden relative z-10">
         {/* Header */}
-        <header className="sticky top-0 z-50 flex h-16 shrink-0 items-center justify-between border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-slate-950/90 backdrop-blur-xl px-4 md:px-8">
+        <header className="sticky top-0 z-50 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-slate-950/90 backdrop-blur-xl px-3 sm:px-4 md:px-8">
           <div className="flex items-center gap-3">
             {/* Mobile Sidebar Toggle */}
             <div className="md:hidden">
@@ -227,7 +227,7 @@ export default function ExpertLayout() {
                 </button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent align="end" className="w-80 md:w-96 rounded-2xl border-white/10 shadow-2xl bg-[#0d1030]/95 backdrop-blur-xl p-0 z-[100] text-white overflow-hidden">
+              <DropdownMenuContent align="end" className="w-[calc(100vw-2rem)] max-w-sm sm:w-80 md:w-96 rounded-2xl border-white/10 shadow-2xl bg-[#0d1030]/95 backdrop-blur-xl p-0 z-[100] text-white overflow-hidden">
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b border-white/10 bg-slate-950/60">
                   <div className="flex items-center gap-2">
@@ -350,7 +350,7 @@ export default function ExpertLayout() {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 min-h-0 overflow-y-auto p-3 sm:p-4 md:p-8 bg-slate-50 dark:bg-[#090e24]/40 relative">
+        <main className="flex-1 min-h-0 overflow-y-auto p-3 sm:p-4 md:p-6 lg:p-8 bg-slate-50 dark:bg-[#090e24]/40 relative">
           <Outlet />
         </main>
       </div>

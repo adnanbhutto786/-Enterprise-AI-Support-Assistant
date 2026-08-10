@@ -157,9 +157,9 @@ export default function ExpertTickets() {
   )
 
   return (
-    <div className="grid gap-6 md:grid-cols-3 relative z-10 text-white">
+    <div className="grid gap-6 grid-cols-1 md:grid-cols-3 relative z-10 text-white">
       {/* Left side: Tickets List */}
-      <Card className="glass-panel border-white/5 bg-slate-900/40 backdrop-blur-xl md:col-span-2 rounded-3xl p-6 shadow-xl flex flex-col h-[calc(100vh-140px)]">
+      <Card className="glass-panel border-white/5 bg-slate-900/40 backdrop-blur-xl md:col-span-2 rounded-3xl p-4 sm:p-6 shadow-xl flex flex-col min-h-[400px] md:h-[calc(100vh-140px)]">
         <CardHeader className="px-0 pt-0 pb-4">
           <div className="flex items-center justify-between">
             <CardTitle className="text-xl font-bold tracking-tight">Assigned Tickets</CardTitle>
@@ -252,7 +252,7 @@ export default function ExpertTickets() {
       </Card>
 
       {/* Right side: Detailed Workspace & Notes */}
-      <Card className="glass-panel border-white/5 bg-slate-900/40 backdrop-blur-xl rounded-3xl p-6 shadow-xl h-[calc(100vh-140px)] flex flex-col">
+      <Card className="glass-panel border-white/5 bg-slate-900/40 backdrop-blur-xl rounded-3xl p-4 sm:p-6 shadow-xl min-h-[350px] md:h-[calc(100vh-140px)] flex flex-col">
         {feedback && (
           <div className={`mb-3 p-2.5 rounded-xl text-xs flex items-center gap-2 animate-in fade-in slide-in-from-top-1 ${
             feedback.type === "success" 

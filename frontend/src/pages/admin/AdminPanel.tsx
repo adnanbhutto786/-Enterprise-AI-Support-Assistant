@@ -98,13 +98,13 @@ export default function AdminPanel() {
   return (
     <div className="space-y-6 text-white relative z-10">
       <div>
-        <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">Admin Control Panel</h1>
+        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">Admin Control Panel</h1>
         <p className="text-slate-400 mt-2 text-sm">
           Manage system configurations, user permissions, and monitor server status.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
         {/* Users Management */}
         <Card className="md:col-span-2 border-white/5 bg-slate-900/40 backdrop-blur-md text-white shadow-xl">
           <CardHeader className="flex flex-row items-center gap-3">
@@ -117,7 +117,8 @@ export default function AdminPanel() {
             </div>
           </CardHeader>
           <CardContent>
-            <Table className="text-white">
+            <div className="overflow-x-auto -mx-6">
+            <Table className="text-white min-w-[600px]">
               <TableHeader>
                 <TableRow className="border-white/5">
                   <TableHead className="text-slate-400">Name</TableHead>
@@ -186,6 +187,7 @@ export default function AdminPanel() {
                 )}
               </TableBody>
             </Table>
+            </div>
           </CardContent>
         </Card>
 

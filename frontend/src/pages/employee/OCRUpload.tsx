@@ -78,10 +78,10 @@ export default function OCRUpload() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 text-white relative z-10">
+    <div className="mx-auto max-w-5xl space-y-5 text-white relative z-10">
       <div>
-        <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">OCR Document Upload</h1>
-        <p className="text-slate-400 mt-2 text-sm">
+        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">OCR Document Upload</h1>
+        <p className="text-slate-400 mt-2 text-xs sm:text-sm">
           Upload a screenshot or PDF of an SAP error message for automatic module parsing and error isolation.
         </p>
       </div>
@@ -90,7 +90,7 @@ export default function OCRUpload() {
         <CardContent className="pt-6">
           <div
             {...getRootProps()}
-            className={`border-2 border-dashed rounded-2xl p-12 text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+            className={`border-2 border-dashed rounded-2xl p-6 sm:p-10 md:p-12 text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
               isDragActive ? "border-indigo-500 bg-indigo-500/5" : "border-white/10 hover:border-indigo-500/50 hover:bg-slate-900/60"
             }`}
           >
@@ -169,7 +169,7 @@ export default function OCRUpload() {
       )}
 
       {result && (
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid gap-5 sm:gap-6 grid-cols-1 xl:grid-cols-2">
           <Card className="border-white/5 bg-slate-900/40 backdrop-blur-md text-white shadow-xl">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg font-semibold">

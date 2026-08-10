@@ -178,7 +178,7 @@ export default function AdminLayout() {
   )
 
   return (
-    <div className="dark flex h-full w-full overflow-hidden bg-[#06091a] text-white font-sans relative">
+    <div className="dark flex flex-1 min-h-0 w-full bg-[#06091a] text-white font-sans relative overflow-hidden">
       {/* Dark deep indigo/red security background glows */}
       <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-red-600/10 blur-[160px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-0 -right-40 h-[500px] w-[500px] rounded-full bg-rose-900/10 blur-[140px] pointer-events-none animate-pulse" />
@@ -193,14 +193,14 @@ export default function AdminLayout() {
       />
 
       {/* Desktop Sidebar */}
-      <div className="hidden w-64 md:flex flex-col h-full shrink-0 relative z-10 rounded-none border-r border-red-500/10 bg-white/[0.03] backdrop-blur-xl shadow-[4px_0_30px_rgba(0,0,0,0.5)]">
+      <div className="hidden w-56 lg:w-64 md:flex flex-col h-full shrink-0 relative z-10 rounded-none border-r border-red-500/10 bg-white/[0.03] backdrop-blur-xl shadow-[4px_0_30px_rgba(0,0,0,0.5)]">
         <SidebarContent />
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-1 flex-col h-full min-w-0 min-h-0 overflow-hidden relative z-10">
+      <div className="flex flex-1 flex-col min-w-0 min-h-0 overflow-hidden relative z-10">
         {/* Admin Header */}
-        <header className="sticky top-0 z-50 flex h-16 shrink-0 items-center justify-between border-b border-red-500/10 bg-[#06091a]/90 backdrop-blur-xl px-4 md:px-8">
+        <header className="sticky top-0 z-50 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-red-500/10 bg-[#06091a]/90 backdrop-blur-xl px-3 sm:px-4 md:px-8">
           <div className="flex items-center gap-3">
             {/* Mobile Sidebar Toggle */}
             <div className="md:hidden">
@@ -241,7 +241,7 @@ export default function AdminLayout() {
                 </button>
               </DropdownMenuTrigger>
 
-              <DropdownMenuContent align="end" className="w-80 md:w-96 rounded-2xl border-white/10 shadow-2xl bg-[#0d1030]/95 backdrop-blur-xl p-0 z-[100] text-white overflow-hidden">
+              <DropdownMenuContent align="end" className="w-[calc(100vw-2rem)] max-w-sm sm:w-80 md:w-96 rounded-2xl border-white/10 shadow-2xl bg-[#0d1030]/95 backdrop-blur-xl p-0 z-[100] text-white overflow-hidden">
                 {/* Header */}
                 <div className="flex items-center justify-between p-4 border-b border-white/10 bg-slate-950/60">
                   <div className="flex items-center gap-2">
@@ -362,7 +362,7 @@ export default function AdminLayout() {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 min-h-0 overflow-y-auto p-3 sm:p-4 md:p-8 bg-transparent relative">
+        <main className="flex-1 min-h-0 overflow-y-auto p-3 sm:p-4 md:p-6 lg:p-8 bg-transparent relative">
           <Outlet />
         </main>
       </div>

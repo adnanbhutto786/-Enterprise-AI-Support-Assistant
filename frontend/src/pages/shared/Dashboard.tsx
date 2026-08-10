@@ -78,16 +78,16 @@ export default function Dashboard() {
   return (
     <div className="space-y-8 relative z-10 text-white">
       {/* Welcome Banner */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-r from-slate-900/80 via-indigo-950/40 to-slate-900/80 p-8 backdrop-blur-xl shadow-2xl">
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/5 bg-gradient-to-r from-slate-900/80 via-indigo-950/40 to-slate-900/80 p-4 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl">
         <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-indigo-500/10 blur-[80px] pointer-events-none" />
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-400 border border-indigo-500/20 mb-4 animate-pulse">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-400 border border-indigo-500/20 mb-3 sm:mb-4 animate-pulse">
             <Sparkles className="h-3 w-3" /> SAP AI Engine Active
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-100 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-100 bg-clip-text text-transparent">
             Welcome, {userName}
           </h1>
-          <p className="mt-3 text-slate-400 leading-relaxed text-sm">
+          <p className="mt-2 sm:mt-3 text-slate-400 leading-relaxed text-xs sm:text-sm">
             {userRole === "admin" 
               ? "Optimize configurations, track deflection metrics, manage escalations, and audit system performance globally from this central Admin Hub."
               : "Ask questions from SAP modules, upload images/PDFs for automated OCR verification, and resolve issues instantly."
@@ -97,7 +97,7 @@ export default function Dashboard() {
       </div>
 
       {/* User Snapshot */}
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <Card className="border-white/5 bg-slate-900/40 backdrop-blur-md shadow-xl hover:border-white/10 transition-all duration-300">
           <CardHeader className="flex items-center justify-between gap-3">
             <div>
@@ -165,7 +165,7 @@ export default function Dashboard() {
       </div>
 
       {/* Metrics Row */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:gap-5 grid-cols-2 lg:grid-cols-4">
         {/* Active Tickets */}
         <Card className="border-white/5 bg-slate-900/40 backdrop-blur-md shadow-lg text-white hover:border-white/10 transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -253,9 +253,9 @@ export default function Dashboard() {
       </div>
 
       {/* Main Sections Grid */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-7">
+      <div className="grid gap-6 grid-cols-1 lg:grid-cols-7">
         {/* Dynamic Left Panel */}
-        <div className="col-span-4 space-y-6">
+        <div className="col-span-1 md:col-span-2 lg:col-span-4 space-y-6">
           {userRole === "admin" ? (
             <Card className="border-white/5 bg-slate-900/30 backdrop-blur-md text-white shadow-xl">
               <CardHeader>
@@ -327,7 +327,7 @@ export default function Dashboard() {
         </div>
 
         {/* Right Panel: Live Activity Monitor */}
-        <Card className="col-span-3 border-white/5 bg-slate-900/30 backdrop-blur-md text-white shadow-xl rounded-3xl">
+        <Card className="col-span-1 md:col-span-2 lg:col-span-3 border-white/5 bg-slate-900/30 backdrop-blur-md text-white shadow-xl rounded-3xl">
           <CardHeader>
             <CardTitle className="text-lg font-bold">System Activity Feed</CardTitle>
             <CardDescription className="text-slate-400">Real-time status updates and event log.</CardDescription>

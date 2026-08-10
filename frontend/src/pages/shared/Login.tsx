@@ -105,7 +105,7 @@ export default function Login() {
   }
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center bg-background overflow-y-auto text-foreground p-4">
+    <div className="relative flex min-h-screen w-full items-center justify-center bg-background overflow-y-auto text-foreground py-6 px-4">
       {/* Dynamic Animated Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-600/20 blur-[120px] animate-blob mix-blend-screen" />
       <div className="absolute top-[20%] right-[-10%] h-[400px] w-[400px] rounded-full bg-purple-600/20 blur-[100px] animate-blob animation-delay-2000 mix-blend-screen" />
@@ -113,15 +113,15 @@ export default function Login() {
       
       {/* Floating particles/noise overlay could go here */}
 
-      <div className="relative z-10 w-full max-w-md px-4 animate-float">
+      <div className="relative z-10 w-full max-w-md animate-float">
         <Card className="glass-panel overflow-hidden rounded-[2rem]">
           <CardHeader className="space-y-4 text-center px-8 pt-12 pb-4">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[2rem] bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 shadow-[0_0_40px_rgba(99,102,241,0.15)] relative group">
+            <div className="mx-auto flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-[2rem] bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 shadow-[0_0_40px_rgba(99,102,241,0.15)] relative group">
               <div className="absolute inset-0 rounded-[2rem] bg-indigo-400/20 blur-xl group-hover:bg-indigo-400/30 transition-all duration-500" />
               <ShieldCheck className="h-10 w-10 relative z-10" />
             </div>
             <div className="space-y-2">
-              <CardTitle className="text-4xl font-extrabold tracking-tight bg-gradient-to-br from-slate-900 via-indigo-800 to-purple-600 dark:from-white dark:via-indigo-100 dark:to-purple-300 bg-clip-text text-transparent pb-1">
+              <CardTitle className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-br from-slate-900 via-indigo-800 to-purple-600 dark:from-white dark:via-indigo-100 dark:to-purple-300 bg-clip-text text-transparent pb-1">
                 AI Portal
               </CardTitle>
               <CardDescription className="text-muted-foreground font-medium">
@@ -131,7 +131,7 @@ export default function Login() {
           </CardHeader>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 px-8 pb-8 pt-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 px-4 sm:px-8 pb-8 pt-2">
               {errorMsg && (
                 <div className="flex items-center gap-3 p-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-300 text-sm shadow-inner shadow-red-500/10 animate-in fade-in slide-in-from-top-2">
                   <AlertCircle className="h-5 w-5 shrink-0" />
@@ -150,7 +150,7 @@ export default function Login() {
                         <Input
                           placeholder="name@company.com"
                           {...field}
-                          className="h-14 bg-white/50 dark:bg-slate-900/50 border-black/10 dark:border-white/10 text-foreground placeholder:text-muted-foreground rounded-2xl focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:border-transparent transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/50"
+                          className="h-12 sm:h-14 bg-white/50 dark:bg-slate-900/50 border-black/10 dark:border-white/10 text-foreground placeholder:text-muted-foreground rounded-2xl focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:border-transparent transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/50"
                         />
                       </FormControl>
                       <FormMessage className="text-red-500 dark:text-red-400 text-xs font-medium" />
@@ -170,7 +170,7 @@ export default function Login() {
                             type={showPassword ? "text" : "password"}
                             placeholder="••••••••"
                             {...field}
-                            className="h-14 bg-white/50 dark:bg-slate-900/50 border-black/10 dark:border-white/10 text-foreground placeholder:text-muted-foreground rounded-2xl pr-12 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:border-transparent transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/50"
+                            className="h-12 sm:h-14 bg-white/50 dark:bg-slate-900/50 border-black/10 dark:border-white/10 text-foreground placeholder:text-muted-foreground rounded-2xl pr-12 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:border-transparent transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/50"
                           />
                         </FormControl>
                         <button
@@ -213,7 +213,7 @@ export default function Login() {
 
               <Button
                 type="submit"
-                className="group relative w-full overflow-hidden rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold h-14 transition-all duration-300 shadow-[0_0_40px_rgba(79,70,229,0.3)] hover:shadow-[0_0_60px_rgba(79,70,229,0.5)] hover:-translate-y-0.5"
+                className="group relative w-full overflow-hidden rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold h-12 sm:h-14 transition-all duration-300 shadow-[0_0_40px_rgba(79,70,229,0.3)] hover:shadow-[0_0_60px_rgba(79,70,229,0.5)] hover:-translate-y-0.5"
               >
                 <span className="relative z-10 text-base">Initialize Session</span>
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
@@ -221,7 +221,7 @@ export default function Login() {
             </form>
           </Form>
 
-          <div className="border-t border-black/5 dark:border-white/10 px-8 py-6 bg-black/5 dark:bg-slate-950/40">
+          <div className="border-t border-black/5 dark:border-white/10 px-4 sm:px-8 py-5 bg-black/5 dark:bg-slate-950/40">
             <p className="text-center text-sm font-medium text-muted-foreground">
               New employee?{" "}
               <Link to="/register" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors hover:underline underline-offset-4">

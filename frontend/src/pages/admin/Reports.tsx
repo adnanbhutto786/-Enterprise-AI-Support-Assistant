@@ -357,8 +357,8 @@ export default function Reports() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-100 bg-clip-text text-transparent">
-            Executive Reports & Audit Center
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-100 bg-clip-text text-transparent">
+            Executive Reports &amp; Audit Center
           </h1>
           <p className="text-slate-400 mt-1 text-sm">
             Generate and export certified operational reports, AI deflection metrics, and ticket logs.
