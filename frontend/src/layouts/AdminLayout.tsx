@@ -200,14 +200,14 @@ export default function AdminLayout() {
       {/* Main Content Area */}
       <div className="flex flex-1 flex-col min-w-0 min-h-0 overflow-hidden relative z-10">
         {/* Admin Header */}
-        <header className="sticky top-0 z-50 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-red-500/10 bg-[#06091a]/90 backdrop-blur-xl px-3 sm:px-4 md:px-8">
-          <div className="flex items-center gap-3">
+        <header className="sticky top-0 z-50 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-red-500/10 bg-[#06091a]/90 backdrop-blur-xl px-2.5 sm:px-4 md:px-8">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             {/* Mobile Sidebar Toggle */}
-            <div className="md:hidden">
+            <div className="md:hidden shrink-0">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hover:bg-black/5 dark:hover:bg-white/5">
-                    <Menu className="h-6 w-6 text-foreground" />
+                  <Button variant="ghost" size="icon" className="h-9 w-9 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">
+                    <Menu className="h-5 w-5 text-foreground" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-64 p-0 bg-[#06091a] border-r border-red-500/15">
@@ -215,11 +215,14 @@ export default function AdminLayout() {
                 </SheetContent>
               </Sheet>
             </div>
-            <div className="flex items-center md:hidden gap-3">
-              <div className="p-2 rounded-lg bg-red-600">
-                <ShieldAlert className="h-5 w-5 text-white" />
+            <div className="flex items-center md:hidden gap-2 min-w-0">
+              <div className="p-1.5 sm:p-2 rounded-lg bg-red-600 shrink-0">
+                <ShieldAlert className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <span className="text-lg font-bold tracking-tight text-white">Shield Admin</span>
+              <div className="min-w-0 truncate">
+                <span className="text-xs sm:text-base font-bold tracking-tight text-white truncate block max-w-[130px] min-[380px]:max-w-none">Shield Admin</span>
+                <p className="text-[8px] text-red-400 font-bold uppercase tracking-wider">Control Panel</p>
+              </div>
             </div>
           </div>
           
@@ -227,7 +230,7 @@ export default function AdminLayout() {
             <span className="text-sm text-red-400 font-bold uppercase tracking-wider">Admin Control Center</span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Notifications Bell Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

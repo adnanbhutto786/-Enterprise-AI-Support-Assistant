@@ -185,14 +185,14 @@ export default function ExpertLayout() {
       {/* Main Content */}
       <div className="flex flex-1 flex-col min-w-0 min-h-0 overflow-hidden relative z-10">
         {/* Header */}
-        <header className="sticky top-0 z-50 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-slate-950/90 backdrop-blur-xl px-3 sm:px-4 md:px-8">
-          <div className="flex items-center gap-3">
+        <header className="sticky top-0 z-50 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-slate-950/90 backdrop-blur-xl px-2.5 sm:px-4 md:px-8">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             {/* Mobile Sidebar Toggle */}
-            <div className="md:hidden">
+            <div className="md:hidden shrink-0">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hover:bg-black/5 dark:hover:bg-white/5">
-                    <Menu className="h-6 w-6 text-foreground" />
+                  <Button variant="ghost" size="icon" className="h-9 w-9 rounded-xl hover:bg-black/5 dark:hover:bg-white/5">
+                    <Menu className="h-5 w-5 text-foreground" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-64 p-0 bg-white dark:bg-slate-950 border-r border-indigo-500/20">
@@ -200,11 +200,14 @@ export default function ExpertLayout() {
                 </SheetContent>
               </Sheet>
             </div>
-            <div className="flex items-center md:hidden gap-3">
-              <div className="p-2 rounded-lg bg-indigo-600">
-                <Sparkles className="h-5 w-5 text-white" />
+            <div className="flex items-center md:hidden gap-2 min-w-0">
+              <div className="p-1.5 sm:p-2 rounded-lg bg-indigo-600 shrink-0">
+                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <span className="text-lg font-bold tracking-tight text-foreground">Expert Portal</span>
+              <div className="min-w-0 truncate">
+                <span className="text-xs sm:text-base font-bold tracking-tight text-foreground truncate block max-w-[130px] min-[380px]:max-w-none">Expert Portal</span>
+                <p className="text-[8px] text-indigo-500 dark:text-indigo-400 font-bold uppercase tracking-wider">Workspace</p>
+              </div>
             </div>
           </div>
           
@@ -213,7 +216,7 @@ export default function ExpertLayout() {
             <span className="text-sm text-indigo-600 dark:text-indigo-300 font-semibold">{expertEmail}</span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Notifications Bell Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

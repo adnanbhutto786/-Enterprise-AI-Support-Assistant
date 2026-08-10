@@ -188,17 +188,31 @@ export default function DashboardLayout() {
       {/* Main Content Area */}
       <div className="flex flex-1 flex-col min-w-0 min-h-0 overflow-hidden relative z-10">
         {/* Fixed Top Navbar */}
-        <header className="sticky top-0 z-50 h-14 sm:h-16 shrink-0 w-full flex items-center justify-between border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-[#06091a]/90 backdrop-blur-2xl px-3 sm:px-4 md:px-8 shadow-sm">
-          {/* Left Side: Mobile Logo / Desktop Welcome */}
-          <div className="flex items-center gap-3">
+        <header className="sticky top-0 z-50 h-14 sm:h-16 shrink-0 w-full flex items-center justify-between border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-[#06091a]/90 backdrop-blur-2xl px-2.5 sm:px-4 md:px-8 shadow-sm">
+          {/* Left Side: Mobile Hamburger + Mobile Branding / Desktop Welcome */}
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            {/* Mobile Hamburger Drawer Trigger (Left Side) */}
+            <div className="md:hidden shrink-0">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="h-9 w-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-foreground">
+                    <Menu className="h-5 w-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-72 p-0 bg-white dark:bg-slate-950 border-r border-indigo-500/20">
+                  <SidebarContent />
+                </SheetContent>
+              </Sheet>
+            </div>
+
             {/* Mobile Branding */}
-            <div className="flex items-center md:hidden gap-2.5">
-              <div className="p-2 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 shadow-md shadow-indigo-500/20">
-                <UserCheck className="h-4.5 w-4.5 text-white" />
+            <div className="flex items-center md:hidden gap-2 min-w-0">
+              <div className="p-1.5 sm:p-2 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 shadow-md shadow-indigo-500/20 shrink-0">
+                <UserCheck className="h-4 w-4 sm:h-4.5 sm:w-4.5 text-white" />
               </div>
-              <div>
-                <span className="text-sm font-bold tracking-tight text-foreground">Enterprise Support</span>
-                <p className="text-[9px] text-indigo-500 dark:text-indigo-400 font-bold uppercase tracking-wider">AI Copilot</p>
+              <div className="min-w-0 truncate">
+                <span className="text-xs sm:text-sm font-bold tracking-tight text-foreground truncate block max-w-[130px] min-[380px]:max-w-none">Enterprise Support</span>
+                <p className="text-[8px] sm:text-[9px] text-indigo-500 dark:text-indigo-400 font-bold uppercase tracking-wider">AI Copilot</p>
               </div>
             </div>
 
@@ -209,8 +223,8 @@ export default function DashboardLayout() {
             </div>
           </div>
 
-          {/* Right Side: Theme Toggle + Notification Bell + User Dropdown + Mobile Hamburger */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Right Side: Theme Toggle + Notification Bell + User Dropdown */}
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <div className="hidden sm:block">
               <ModeToggle />
             </div>
@@ -347,20 +361,6 @@ export default function DashboardLayout() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            {/* Mobile Hamburger Drawer Trigger (Right Side) */}
-            <div className="md:hidden">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" className="h-9 w-9 rounded-xl border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-foreground">
-                    <Menu className="h-5 w-5" />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-72 p-0 bg-white dark:bg-slate-950 border-l border-indigo-500/20">
-                  <SidebarContent />
-                </SheetContent>
-              </Sheet>
-            </div>
           </div>
         </header>
 
