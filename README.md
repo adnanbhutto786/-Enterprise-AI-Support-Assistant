@@ -310,6 +310,36 @@ Use these pre-configured credentials to explore the different role views:
 
 ---
 
+## 🌐 Live Production Deployment Guide
+
+### Option 1: Free Cloud Hosting (Render + Vercel) - Recommended
+
+#### 1. Deploy FastAPI Backend on [Render.com](https://render.com)
+1. Sign up on Render and click **New +** -> **Web Service**.
+2. Connect your GitHub repository (`-Enterprise-AI-Support-Assistant`).
+3. Set the following configuration:
+   - **Name**: `enterprise-ai-support-backend`
+   - **Environment**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt && python ingest.py`
+   - **Start Command**: `python server.py` (or `uvicorn server:app --host 0.0.0.0 --port $PORT`)
+4. Add Environment Variables under **Environment**:
+   - `GROQ_API_KEY`: Your Groq Key
+   - `OPENAI_API_KEY`: Your OpenAI Key
+   - `JWT_SECRET_KEY`: Your JWT Secret
+   - `SMTP_EMAIL`: Your Gmail Address
+   - `SMTP_PASSWORD`: Your Gmail App Password
+5. Click **Create Web Service**. Copy your backend live URL (e.g., `https://enterprise-ai-support-backend.onrender.com`).
+
+#### 2. Deploy React Frontend on [Vercel.com](https://vercel.com)
+1. Sign up on Vercel and click **Add New** -> **Project**.
+2. Import your GitHub repository.
+3. Set the **Root Directory** to `frontend`.
+4. Under **Environment Variables**, add:
+   - `VITE_API_BASE_URL`: `https://enterprise-ai-support-backend.onrender.com` (Your Render Backend URL)
+5. Click **Deploy**. Vercel will generate your live production URL (e.g., `https://enterprise-ai-support.vercel.app`).
+
+---
+
 ## 🛡️ Security Best Practices
 
 - **Zero-Secret Commits**: All sensitive credentials, API keys, database files, and uploaded files are excluded from Git via `.gitignore`.
