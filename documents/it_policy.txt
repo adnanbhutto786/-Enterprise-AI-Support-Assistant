@@ -1,0 +1,10 @@
+ACME Corp IT Support Policy
+
+Section 1: Password Resets
+If you need to reset your password, please use the self-service portal at https://password.acme.corp. If the portal is down, you may contact the IT helpdesk at 555-0199.
+
+Section 2: VPN Access
+VPN access requires a physical RSA token. If you lose your token, report it immediately to security@acme.corp and a replacement will be mailed to your address on file within 3-5 business days.
+
+Section 3: Software Installation
+Users do not have local administrator rights. To request new software, please open a ticket in the JIRA Service Desk under the "Software Request" category. Approval from your direct manager is required for paid software.
