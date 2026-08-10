@@ -312,31 +312,35 @@ Use these pre-configured credentials to explore the different role views:
 
 ## 🌐 Live Production Deployment Guide
 
-### Option 1: Free Cloud Hosting (Render + Vercel) - Recommended
+### Option 1: Railway.app (FastAPI Backend) + Vercel (React Frontend)
 
-#### 1. Deploy FastAPI Backend on [Render.com](https://render.com)
-1. Sign up on Render and click **New +** -> **Web Service**.
-2. Connect your GitHub repository (`-Enterprise-AI-Support-Assistant`).
-3. Set the following configuration:
-   - **Name**: `enterprise-ai-support-backend`
-   - **Environment**: `Python 3`
-   - **Build Command**: `pip install -r requirements.txt && python ingest.py`
-   - **Start Command**: `python server.py` (or `uvicorn server:app --host 0.0.0.0 --port $PORT`)
-4. Add Environment Variables under **Environment**:
+#### 1. Deploy Backend on [Railway.app](https://railway.app)
+1. Sign in to **Railway.app** using your GitHub account.
+2. Click **New Project** -> **Deploy from GitHub repo**.
+3. Select your repository (`-Enterprise-AI-Support-Assistant`).
+4. Click **Add Variables** and configure:
    - `GROQ_API_KEY`: Your Groq Key
    - `OPENAI_API_KEY`: Your OpenAI Key
    - `JWT_SECRET_KEY`: Your JWT Secret
    - `SMTP_EMAIL`: Your Gmail Address
    - `SMTP_PASSWORD`: Your Gmail App Password
-5. Click **Create Web Service**. Copy your backend live URL (e.g., `https://enterprise-ai-support-backend.onrender.com`).
+5. Under **Settings** -> **Networking**, click **Generate Domain**.
+6. Railway will automatically build using `Procfile` and give you a public URL (e.g., `https://enterprise-ai-support-backend.up.railway.app`).
 
-#### 2. Deploy React Frontend on [Vercel.com](https://vercel.com)
-1. Sign up on Vercel and click **Add New** -> **Project**.
-2. Import your GitHub repository.
-3. Set the **Root Directory** to `frontend`.
-4. Under **Environment Variables**, add:
-   - `VITE_API_BASE_URL`: `https://enterprise-ai-support-backend.onrender.com` (Your Render Backend URL)
-5. Click **Deploy**. Vercel will generate your live production URL (e.g., `https://enterprise-ai-support.vercel.app`).
+#### 2. Deploy Frontend on [Vercel.com](https://vercel.com)
+1. Import GitHub repository on Vercel.
+2. Set Root Directory to `frontend`.
+3. Add Environment Variable `VITE_API_BASE_URL` = `https://enterprise-ai-support-backend.up.railway.app` (Your Railway Backend URL).
+4. Click **Deploy**.
+
+---
+
+### Option 2: Koyeb.com (100% Free Forever Alternative for Backend)
+1. Sign up on [Koyeb.com](https://www.koyeb.com/).
+2. Create a **New App** -> **GitHub**.
+3. Set Build Command: `pip install -r requirements.txt && python ingest.py`
+4. Set Run Command: `python server.py`
+5. Add environment variables and deploy.
 
 ---
 
