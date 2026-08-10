@@ -105,7 +105,7 @@ export default function Login() {
   }
 
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center bg-background overflow-y-auto text-foreground py-6 px-4">
+    <div className="relative flex min-h-dvh w-full items-start sm:items-center justify-center bg-background overflow-y-auto text-foreground py-8 sm:py-12 px-4">
       {/* Dynamic Animated Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-600/20 blur-[120px] animate-blob mix-blend-screen" />
       <div className="absolute top-[20%] right-[-10%] h-[400px] w-[400px] rounded-full bg-purple-600/20 blur-[100px] animate-blob animation-delay-2000 mix-blend-screen" />
@@ -114,11 +114,11 @@ export default function Login() {
       {/* Floating particles/noise overlay could go here */}
 
       <div className="relative z-10 w-full max-w-md animate-float">
-        <Card className="glass-panel overflow-hidden rounded-[2rem]">
-          <CardHeader className="space-y-4 text-center px-8 pt-12 pb-4">
-            <div className="mx-auto flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-[2rem] bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 shadow-[0_0_40px_rgba(99,102,241,0.15)] relative group">
-              <div className="absolute inset-0 rounded-[2rem] bg-indigo-400/20 blur-xl group-hover:bg-indigo-400/30 transition-all duration-500" />
-              <ShieldCheck className="h-10 w-10 relative z-10" />
+        <Card className="glass-panel overflow-hidden rounded-[2rem] my-auto">
+          <CardHeader className="space-y-3 text-center px-4 sm:px-8 pt-6 sm:pt-10 pb-2 sm:pb-4">
+            <div className="mx-auto flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center rounded-[1.5rem] sm:rounded-[2rem] bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 shadow-[0_0_40px_rgba(99,102,241,0.15)] relative group">
+              <div className="absolute inset-0 rounded-[1.5rem] sm:rounded-[2rem] bg-indigo-400/20 blur-xl group-hover:bg-indigo-400/30 transition-all duration-500" />
+              <ShieldCheck className="h-8 w-8 sm:h-10 sm:w-10 relative z-10" />
             </div>
             <div className="space-y-2">
               <CardTitle className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-br from-slate-900 via-indigo-800 to-purple-600 dark:from-white dark:via-indigo-100 dark:to-purple-300 bg-clip-text text-transparent pb-1">
